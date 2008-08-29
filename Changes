@@ -1,0 +1,27 @@
+Revision history for Perl extension iThenticate-API-Request.
+
+0.06 Thu Aug 28 17:03:54 2008 PST
+    - Add request parameter validation
+
+0.05  Thu Jun 12 12:05:45 2008 PST
+    - add updated report response data
+    - change status() method to api_status() to avoid confusion between
+      the http status code and the api status code
+    - add timestamp() method to access the response_timestamp struct
+
+0.04  Thu Jun 05 15:39:00 2008 PST
+    - add as_xml() method to iThenticate::API::Response for raw xml
+    - fix issue in errors() method where an empty errors element was
+      created in the raw response when that method was called
+
+0.03  Wed Jun 04 11:26:15 2008 PST
+    - return undefined instead of an empty array reference for messages
+      if no messages exist    
+
+0.02  Mon Apr 07 15:44:12 2008 PST
+    - method updates to match server side api
+
+0.01  Wed Feb 20 01:57:48 2008
+    - original version; created by h2xs 1.23 with options
+	-X iThenticate-API-Request
+

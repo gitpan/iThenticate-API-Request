@@ -1,0 +1,66 @@
+iThenticate::API::RequeUsste(r3)Contributed Perl DocumenitTahteinotnicate::API::Request(3)
+
+
+
+NNAAMMEE
+       iThenticate::API::Request - create request objects for the iThenti-
+       cate::API
+
+SSYYNNOOPPSSIISS
+        # construct a new API request
+        $request = iThenticate::API::Request->new( {
+            method => ’login’,         # required
+            auth   => $auth_object,    # auth object appropriate to the transport mechanism
+        } );
+
+        # make the request using an iThenticate::API::Client user agent
+        $response = $client->make_request( { request => $request } );
+
+        # dump out the request as a string
+        $string = $request->as_string;
+
+DDEESSCCRRIIPPTTIIOONN
+VVAARRIIAABBLLEESS
+       Validations
+           This package scoped hash consists of methods and their required
+           arguments.  It is necessary because we cannot always rely on the
+           server to validate request arguments.
+
+MMEETTHHOODDSS
+       _n_e_w_(_)
+            # construct a new API request
+            $request = iThenticate::API::Request->new({
+                method => ’login’,               # required
+                auth   => $auth_object,          # required
+            });
+
+       _v_a_l_i_d_a_t_e_(_)
+            my $validated_args = eval { $class->validate( $method, $args->{req_args} ) };
+
+           Given an xmlrpc method, and a hash reference of key value argument
+           pairs, this returns the corresponding RPC::XML entities.  If any
+           arguments are missing or invalid, this method dies with an appro-
+           priate error string;
+
+FFAAQQ
+       Q:  Why are you using this hodge podge validation scheme instead of
+       Params::Validate?
+
+       A:  To minimize the number of dependencies.  Partly evil yes, but easy
+       install is one of the goals of this module.
+
+BBUUGGSS
+       Plenty at this stage I’m sure.  Send patches to the author.
+
+SSEEEE AALLSSOO
+        iThenticate::API::Client, iThenticate::API::Response, RPC::XML
+
+AAUUTTHHOORR
+       Fred Moyer <fred@iparadigms.com>
+
+CCOOPPYYRRIIGGHHTT
+       Copyright 2008 iParadigms LLC
+
+
+
+perl v5.8.8                       2008-08-28      iThenticate::API::Request(3)

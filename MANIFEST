@@ -1,0 +1,9 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/iThenticate-API-Request.t
+t/iThenticate-API-Response.t
+lib/iThenticate/API/Request.pm
+lib/iThenticate/API/Response.pm
+META.yml                                 Module meta-data (added by MakeMaker)
